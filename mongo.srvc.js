@@ -1,6 +1,6 @@
 'use strict';
 
-const URI = process.env.OPENSHIFT_MONGODB_DB_URL + 'iot';
+const URI = process.env.MONGODB_DB_URL ;
 const MongoClient = require('mongodb').MongoClient;
 
 module.exports.save = (collection, data, cb) => {

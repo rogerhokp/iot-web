@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config()
 let express = require('express');
 let bodyParser = require('body-parser')
 let app = express();
@@ -58,7 +58,7 @@ app.use(express.static('static'));
 
 app.listen(
     process.env.NODE_PORT || '8080',
-    process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
+    process.env.NODEJS_IP || '127.0.0.1',
     function() {
         console.log(
             `Example app listening on port ${process.env.NODE_PORT} !`);

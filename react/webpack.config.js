@@ -30,6 +30,22 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            sourceMap: true,
+            mangle: false,
+            removeRedundantAttributes: false,
+            compress: {
+                dead_code: true,
+                drop_console: true
+            },
+            compressor: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            }
         })
     ]
 };
